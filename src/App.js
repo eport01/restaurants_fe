@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { 
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom'
+import Layout from './components/Layout'
+import fetchData from './apiCalls';
+import React, {useState, useEffect} from "react"; 
 
-function App() {
+const App = () => {
+  const [restaurants, setRestaurants] = useState([])
+
+
+  useEffect(() => {
+    fetchData()
+    .then(data => setRestaurants(data))
+  }, [])
+
+const restaurantsArray = restaurants.map((restaurant) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  <div key = {restaurant.id}>
+    <h2>{restaurant.name}</h2>
+  </div>)  
+})  
+
+
+return (
+  <div className="container mx-auto px-4">
+    <h1>Restaurant's List </h1>
+    {restaurantsArray}
+  </div>
+)}
+
 
 export default App;
