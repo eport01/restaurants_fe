@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css';
 import { 
   BrowserRouter as Router,
   Routes,
@@ -20,16 +21,20 @@ const App = () => {
 const restaurantsArray = restaurants.map((restaurant) => {
   return (
   <div key = {restaurant.id}>
-    <h2>{restaurant.name}</h2>
+    <h2>- {restaurant.name}</h2>
   </div>)  
 })  
 
 
 return (
-  <div className="container mx-auto px-4">
-    <h1>Restaurant's List </h1>
+  <div className="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10">
+  <p className="text-3xl text-gray-700 font-bold mb-5">
+    <center><h1>Restaurant List </h1></center>
     {restaurantsArray}
-  </div>
+    
+  </p>
+</div>
+
 )}
 
 
