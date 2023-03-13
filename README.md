@@ -11,7 +11,7 @@
 
 
 ## Installation Instructions 
-1. Clone and install the [backend API](https://github.com/eport01/restaurant_fastapi) 
-2. Clone and instaill this Frontend repository, cd into directory and run ``npm install``
+1. Clone, install, and run the [backend API](https://github.com/eport01/restaurant_fastapi) 
+2. Clone and install this Frontend repository, cd into directory and run ``npm install``
 3. Run ``npm start``
 4. Navigate to your local server 
